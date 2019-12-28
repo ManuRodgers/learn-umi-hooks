@@ -16,7 +16,7 @@ const App: React.FunctionComponent<IAppProps> = ({}) => {
       </Spin>
       <Button.Group style={{ marginTop: 16 }}>
         <Button type={'primary'} onClick={timer.pause}>
-          pause
+          pause goat
         </Button>
         <Button type={'primary'} onClick={timer.stop}>
           stop
