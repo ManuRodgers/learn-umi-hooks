@@ -19,7 +19,7 @@ const App: React.FunctionComponent<IAppProps> = ({}) => {
           pause goat
         </Button>
         <Button type={'primary'} onClick={timer.stop}>
-          stop
+          stop goat
         </Button>
         <Button type={'primary'} onClick={timer.resume}>
           resume
