@@ -9,7 +9,6 @@ const App: React.FunctionComponent<IAppProps> = ({}) => {
   const { run, cancel } = useDebounceFn(
     () => {
       setValue(value + 1);
-q
     },
     [value],
     500,
