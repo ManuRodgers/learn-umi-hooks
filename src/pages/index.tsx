@@ -18,7 +18,7 @@ const App: React.FunctionComponent<IAppProps> = ({}) => {
     <div>
       <p>clicked: {value} times</p>
       <Button style={{ marginTop: 16 }} onClick={run}>
-        Click Fast
+        Click Fast Hot_Fix
       </Button>
     </div>
   );
