@@ -1,30 +1,26 @@
-import * as React from 'react';
-import { Spin, Button } from 'antd';
-import { useAPI } from '@umijs/hooks';
+import React, { useState } from 'react';
+import { Button } from 'antd';
+import { useDebounceFn } from '@umijs/hooks';
 
 interface IAppProps {}
 
 const App: React.FunctionComponent<IAppProps> = ({}) => {
-  const { data: Id, loading, timer } = useAPI({
-    url: 'https://helloacm.com/api/random/?n=8&x=4',
-    pollingInterval: 3000,
-  });
+  const [value, setValue] = useState<number>(0);
+  const { run, cancel } = useDebounceFn(
+    () => {
+      setValue(value + 1);
+q
+    },
+    [value],
+    500,
+  );
+
   return (
     <div>
-      <Spin spinning={loading}>
-        <div>id: {Id}</div>
-      </Spin>
-      <Button.Group style={{ marginTop: 16 }}>
-        <Button type={'primary'} onClick={timer.pause}>
-          pause goat
-        </Button>
-        <Button type={'primary'} onClick={timer.stop}>
-          stop goat
-        </Button>
-        <Button type={'primary'} onClick={timer.resume}>
-          resume
-        </Button>
-      </Button.Group>
+      <p>clicked: {value} times</p>
+      <Button style={{ marginTop: 16 }} onClick={run}>
+        Click Fast
+      </Button>
     </div>
   );
 };
